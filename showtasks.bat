@@ -7,10 +7,8 @@ goto fail
 
 :runapp
 call %CATALINA_HOME%\bin\startup.bat
-if "%ERRORLEVEL%" == "0" goto startchrome
+goto startchrome
 echo.
-echo TOMCAT CAN'T START
-goto fail
 
 
 :startchrome
