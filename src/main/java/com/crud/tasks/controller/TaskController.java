@@ -16,6 +16,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 /**
  * Created by Lenovo on 14.09.2017.
  */
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/v1/task")
 public class TaskController {
