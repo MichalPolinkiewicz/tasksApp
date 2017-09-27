@@ -7,7 +7,7 @@ goto fail
 
 :runapp
 call %CATALINA_HOME%\bin\startup.bat
-goto startchrome
+if "%ERRORLEVEL%" == "0" goto startchrome
 echo.
 
 
