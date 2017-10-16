@@ -12,9 +12,7 @@ import java.util.List;
 
 import static javax.jnlp.DownloadService2.APPLICATION;
 import static javax.swing.text.html.HTML.Tag.FORM;
-import static org.springframework.http.MediaType.APPLICATION_FORM_URLENCODED;
-import static org.springframework.http.MediaType.APPLICATION_JSON;
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.http.MediaType.*;
 
 /**
  * Created by Lenovo on 14.09.2017.
@@ -39,8 +37,8 @@ public class TaskController {
         return taskMapper.mapToTaskDto(service.getTask(taskId).orElseThrow(TaskNotFoundException::new));
     }
 
-    @RequestMapping (method = RequestMethod.PUT, value = "updateTask", consumes = {"application/x-www-form-urlencoded"})
-    public TaskDto updateTask(@RequestBody TaskDto taskDto){
+    @RequestMapping (method = RequestMethod.PUT, value = "updateTask", consumes = APPLICATION_FORM_URLENCODED_VALUE)
+    public TaskDto updateTask(TaskDto taskDto){
         return taskMapper.mapToTaskDto(service.saveTask(taskMapper.mapToTask(taskDto)));
     }
 
