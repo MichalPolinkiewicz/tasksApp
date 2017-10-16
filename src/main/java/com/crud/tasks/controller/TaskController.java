@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.jnlp.DownloadService2.APPLICATION;
+import static javax.swing.text.html.HTML.Tag.FORM;
+import static org.springframework.http.MediaType.APPLICATION_FORM_URLENCODED;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -36,7 +39,7 @@ public class TaskController {
         return taskMapper.mapToTaskDto(service.getTask(taskId).orElseThrow(TaskNotFoundException::new));
     }
 
-    @RequestMapping (method = RequestMethod.PUT, value = "updateTask", consumes = APPLICATION_JSON_VALUE)
+    @RequestMapping (method = RequestMethod.PUT, value = "updateTask", consumes = {"application/x-www-form-urlencoded"})
     public TaskDto updateTask(@RequestBody TaskDto taskDto){
         return taskMapper.mapToTaskDto(service.saveTask(taskMapper.mapToTask(taskDto)));
     }
