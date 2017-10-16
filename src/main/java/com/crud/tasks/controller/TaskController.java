@@ -34,13 +34,13 @@ public class TaskController {
         return taskMapper.mapToTaskDto(service.getTask(taskId).orElseThrow(TaskNotFoundException::new));
     }
 
-    @RequestMapping (method = RequestMethod.PUT, value = "updateTask", consumes = APPLICATION_FORM_URLENCODED_VALUE)
-    public TaskDto updateTask(@RequestBody TaskDto taskDto){
+    @RequestMapping (method = RequestMethod.PUT, value = "updateTask", consumes = APPLICATION_JSON_VALUE)
+    public TaskDto updateTask(TaskDto taskDto){
         return taskMapper.mapToTaskDto(service.saveTask(taskMapper.mapToTask(taskDto)));
     }
 
-    @RequestMapping (method = RequestMethod.POST, value = "createTask", consumes = APPLICATION_FORM_URLENCODED_VALUE)
-    public void createTask (@RequestBody TaskDto taskDto){
+    @RequestMapping (method = RequestMethod.POST, value = "createTask", consumes = APPLICATION_JSON_VALUE)
+    public void createTask (TaskDto taskDto){
         service.saveTask(taskMapper.mapToTask(taskDto));
     }
 
