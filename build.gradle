@@ -30,11 +30,17 @@ repositories {
 
 
 dependencies {
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.0.0.M4'
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	//runtime('mysql:mysql-connector-java')
-	compile('org.postgresql:postgresql')
+	runtime('mysql:mysql-connector-java')
+	compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
+	//compile('org.postgresql:postgresql')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
 	//providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+
+
 }
