@@ -25,6 +25,7 @@ public class CoreConfiguration implements WebMvcConfigurer {
         return new RestTemplate();
     }
 
+
     @Bean
     public Docket api(){
      return new Docket(DocumentationType.SWAGGER_2)
@@ -43,4 +44,5 @@ public class CoreConfiguration implements WebMvcConfigurer {
         registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
+
 }

@@ -1,10 +1,7 @@
 package com.crud.tasks.domain;
-
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.*;
 
 import javax.persistence.*;
 import javax.persistence.Id;
