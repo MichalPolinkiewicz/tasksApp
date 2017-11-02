@@ -42,7 +42,7 @@ public class TrelloClient {
                 "341b36688e33a7d9682f7386e64d26c55c64c0b3221d823360f7338c206&fields=name&id&lists=all";
 
         try {
-            TrelloBoardDto[] boardsResponse = restTemplate.getForObject(adress, TrelloBoardDto[].class);
+            TrelloBoardDto[] boardsResponse = restTemplate.getForObject(url, TrelloBoardDto[].class);
             return Arrays.asList(Optional.ofNullable(boardsResponse).orElse(new TrelloBoardDto[0]));
         } catch (RestClientException e){
             LOGGER.error (e.getMessage(), e);
