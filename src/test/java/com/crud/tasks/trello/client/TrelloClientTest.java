@@ -24,9 +24,9 @@ import static org.mockito.Mockito.when;
 /**
  * Created by Lenovo on 12.10.2017.
  */
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
 public class TrelloClientTest {
-
+/*
     @InjectMocks
     private TrelloClient trelloClient;
     @Mock
@@ -101,5 +101,6 @@ public class TrelloClientTest {
         //then
         Assert.assertEquals(0, emptyList.size());
     }
+    */
 
 }

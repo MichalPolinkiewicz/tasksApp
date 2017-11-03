@@ -16,15 +16,17 @@ import java.util.List;
 @RequestMapping("/v1/trello/")
 public class TrelloController {
 
+    //@Autowired
+    //private TrelloFacade trelloFacade;
     @Autowired
-    private TrelloFacade trelloFacade;
+    private TrelloService trelloService;
 
     @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
     public List<TrelloBoardDto> getTrelloBoards() {
-            return trelloFacade.fetchTrelloBoards();
+            return trelloService.fetchTrelloBoards();
     }
     @RequestMapping(method = RequestMethod.POST, value = "createTrelloCard")
     public CreatedTrelloCardDto createTrelloCard(@RequestBody TrelloCardDto trelloCardDto){
-        return trelloFacade.createCard(trelloCardDto);
+        return trelloService.createTrelloCard(trelloCardDto);
     }
 }

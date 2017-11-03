@@ -19,21 +19,22 @@ import java.util.stream.Collectors;
 /**
  * Created by Lenovo on 26.10.2017.
  */
-@Component
+//@Component
 public class TrelloFacade {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TrelloFacade.class);
 
-    @Autowired
+    //@Autowired
     private TrelloService trelloService;
 
-    @Autowired
+    //@Autowired
     private TrelloMapper trelloMapper;
 
-    @Autowired
+    //@Autowired
     private TrelloValidator trelloValidator;
 
     public List <TrelloBoardDto> fetchTrelloBoards(){
+
         List <TrelloBoard> trelloBoards = trelloMapper.mapToBoards(trelloService.fetchTrelloBoards());
         List <TrelloBoard> filteredBoards = trelloValidator.validateTrelloBoards(trelloBoards);
 
