@@ -16,15 +16,16 @@ import static org.mockito.internal.verification.VerificationModeFactory.times;
 /**
  * Created by Lenovo on 24.10.2017.
  */
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
 public class SimpleEmailServiceTest {
 
-    @InjectMocks
-    private SimpleEmailService simpleEmailService;
+    //@InjectMocks
+   // private SimpleEmailService simpleEmailService;
 
-    @Mock
-    private JavaMailSender javaMailSender;
+   // @Mock
+   // private JavaMailSender javaMailSender;
 
+    /*
     @Test
     public void shouldSendEmail (){
         //given
@@ -43,5 +44,6 @@ public class SimpleEmailServiceTest {
         verify (javaMailSender, times (1)).send(mailMessage);
 
     }
+    */
 
 }

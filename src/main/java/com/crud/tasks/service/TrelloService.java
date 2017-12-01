@@ -30,6 +30,7 @@ public class TrelloService {
         return trelloClient.getTrelloBoards();
     }
 
+
     public CreatedTrelloCardDto createTrelloCard(final TrelloCardDto trelloCardDto){
 
         CreatedTrelloCardDto newCard = trelloClient.createNewCard(trelloCardDto);
@@ -40,11 +41,11 @@ public class TrelloService {
                             adminConfig.getAdminMail(),
                             null,
                             SUBJECT,
-                            "new card " + trelloCardDto.getName() + " has been created on your account"
+                            trelloCardDto.getName() + "has been created on your account"
                     )
             );
         }
-
         return newCard;
     }
+
 }
